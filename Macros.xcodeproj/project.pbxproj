@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842DFA3D2465021D00F27BE5 /* GoalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DFA3C2465021D00F27BE5 /* GoalCollectionCell.swift */; };
+		842DFA3F2465030800F27BE5 /* TVDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DFA3E2465030800F27BE5 /* TVDemoViewController.swift */; };
 		8459E74B2460EC15002452F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459E74A2460EC15002452F6 /* AppDelegate.swift */; };
 		8459E74D2460EC15002452F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459E74C2460EC15002452F6 /* SceneDelegate.swift */; };
 		8459E74F2460EC15002452F6 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459E74E2460EC15002452F6 /* DemoViewController.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		842DFA3C2465021D00F27BE5 /* GoalCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCollectionCell.swift; sourceTree = "<group>"; };
+		842DFA3E2465030800F27BE5 /* TVDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDemoViewController.swift; sourceTree = "<group>"; };
 		8459E7472460EC15002452F6 /* Macros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8459E74A2460EC15002452F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8459E74C2460EC15002452F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				8459E74A2460EC15002452F6 /* AppDelegate.swift */,
 				8459E74C2460EC15002452F6 /* SceneDelegate.swift */,
 				8459E74E2460EC15002452F6 /* DemoViewController.swift */,
+				842DFA3E2465030800F27BE5 /* TVDemoViewController.swift */,
 				84B358892464F436001FA5C3 /* Components */,
 				84B358902464FCEA001FA5C3 /* Food Database Manager */,
 				8459E77C2460FA92002452F6 /* Extensions.swift */,
@@ -144,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				8459E77A2460ECFA002452F6 /* GoalCell.swift */,
+				842DFA3C2465021D00F27BE5 /* GoalCollectionCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -295,9 +301,11 @@
 				84B358922464FD35001FA5C3 /* FoodDatabaseModels.swift in Sources */,
 				8459E74B2460EC15002452F6 /* AppDelegate.swift in Sources */,
 				84B3588F2464FCDA001FA5C3 /* FoodDatabaseProtocol.swift in Sources */,
+				842DFA3D2465021D00F27BE5 /* GoalCollectionCell.swift in Sources */,
 				8459E74D2460EC15002452F6 /* SceneDelegate.swift in Sources */,
 				84B3588D2464FCB9001FA5C3 /* FoodDatabaseManager.swift in Sources */,
 				84B3588B2464FCA7001FA5C3 /* FoodDatabaseProperties.swift in Sources */,
+				842DFA3F2465030800F27BE5 /* TVDemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
