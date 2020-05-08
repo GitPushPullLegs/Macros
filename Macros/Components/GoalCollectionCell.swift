@@ -52,16 +52,16 @@ class GoalCollectionCell: UITableViewCell {
 
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         self.collectionView.layoutIfNeeded()
-        return collectionView.collectionViewLayout.collectionViewContentSize
+        let numberOfItems = collectionView.numberOfItems(inSection: 0) % 2 == 0 ?
+            collectionView.numberOfItems(inSection: 0) / 2 :
+            (collectionView.numberOfItems(inSection: 0) + 1) / 2
+        return CGSize(width: contentView.frame.width, height: CGFloat(32 + (numberOfItems * 80) + (numberOfItems * 8)))
     }
 }
 
 extension GoalCollectionCell: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = UIScreen.main.bounds.width
-        if screenWidth < 375 {
-            return CGSize(width: screenWidth - 32, height: 80)
-        }
         return CGSize(width: (screenWidth - 40)/2, height: 80)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -79,9 +79,4 @@ extension GoalCollectionCell: UICollectionViewDelegateFlowLayout, UICollectionVi
         guard datasource != nil else { fatalError("Datasource not set.") }
         return datasource!.cellForItemAt(indexPath, in: collectionView)
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: 0, height: 0)
-    }
-
-
 }
