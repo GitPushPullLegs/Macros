@@ -13,9 +13,14 @@ protocol GoalCollectionCellDataSource {
     func cellForItemAt(_ indexPath: IndexPath, in collectionView: UICollectionView) -> UICollectionViewCell
 }
 
+protocol GoalCollectionCellDelegate {
+    func didSelectItemAt(_ indexPath: IndexPath, in collectionView: UICollectionView)
+}
+
 class GoalCollectionCell: UITableViewCell {
 
     var datasource: GoalCollectionCellDataSource?
+    var delegate: GoalCollectionCellDelegate?
 
     lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -78,5 +83,9 @@ extension GoalCollectionCell: UICollectionViewDelegateFlowLayout, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard datasource != nil else { fatalError("Datasource not set.") }
         return datasource!.cellForItemAt(indexPath, in: collectionView)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectItemAt(indexPath, in: collectionView)
     }
 }

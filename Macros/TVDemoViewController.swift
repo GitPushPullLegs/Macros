@@ -18,6 +18,7 @@ class TVDemoViewController: UITableViewController {
     lazy var goalCell: GoalCollectionCell = {
         let goalCell = GoalCollectionCell()
         goalCell.datasource = self
+        goalCell.delegate = self
         return goalCell
     }()
 
@@ -40,9 +41,9 @@ class TVDemoViewController: UITableViewController {
     }
 }
 
-extension TVDemoViewController: GoalCollectionCellDataSource {
+extension TVDemoViewController: GoalCollectionCellDataSource, GoalCollectionCellDelegate {
     func numberofCellsInSection(_ section: Int, in collectionView: UICollectionView) -> Int {
-        return 5
+        return 1
     }
 
     func cellForItemAt(_ indexPath: IndexPath, in collectionView: UICollectionView) -> UICollectionViewCell {
@@ -83,5 +84,9 @@ extension TVDemoViewController: GoalCollectionCellDataSource {
             caloriesCell.progressView.setProgress(1.0, animated: false)
             return caloriesCell
         }
+    }
+    
+    func didSelectItemAt(_ indexPath: IndexPath, in collectionView: UICollectionView) {
+        print((collectionView.cellForItem(at: indexPath) as! GoalCell).titleLabel.text!)
     }
 }
