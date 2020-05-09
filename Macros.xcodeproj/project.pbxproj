@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		842DFA3D2465021D00F27BE5 /* GoalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DFA3C2465021D00F27BE5 /* GoalCollectionCell.swift */; };
 		842DFA3F2465030800F27BE5 /* TVDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DFA3E2465030800F27BE5 /* TVDemoViewController.swift */; };
+		842DFA4124663B7B00F27BE5 /* HealthKitProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DFA4024663B7B00F27BE5 /* HealthKitProtocol.swift */; };
+		842DFA4324663C1100F27BE5 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842DFA4224663C1100F27BE5 /* HealthKitManager.swift */; };
+		842DFA4724663F6400F27BE5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842DFA4624663F6400F27BE5 /* HealthKit.framework */; };
 		8459E74B2460EC15002452F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459E74A2460EC15002452F6 /* AppDelegate.swift */; };
 		8459E74D2460EC15002452F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459E74C2460EC15002452F6 /* SceneDelegate.swift */; };
 		8459E74F2460EC15002452F6 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459E74E2460EC15002452F6 /* DemoViewController.swift */; };
@@ -44,6 +47,10 @@
 /* Begin PBXFileReference section */
 		842DFA3C2465021D00F27BE5 /* GoalCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCollectionCell.swift; sourceTree = "<group>"; };
 		842DFA3E2465030800F27BE5 /* TVDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDemoViewController.swift; sourceTree = "<group>"; };
+		842DFA4024663B7B00F27BE5 /* HealthKitProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitProtocol.swift; sourceTree = "<group>"; };
+		842DFA4224663C1100F27BE5 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		842DFA4424663F6300F27BE5 /* Macros.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Macros.entitlements; sourceTree = "<group>"; };
+		842DFA4624663F6400F27BE5 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8459E7472460EC15002452F6 /* Macros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Macros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8459E74A2460EC15002452F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8459E74C2460EC15002452F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842DFA4724663F6400F27BE5 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +98,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		842DFA4524663F6400F27BE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				842DFA4624663F6400F27BE5 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		842DFA4824663F8C00F27BE5 /* HealthKit Manager */ = {
+			isa = PBXGroup;
+			children = (
+				842DFA4024663B7B00F27BE5 /* HealthKitProtocol.swift */,
+				842DFA4224663C1100F27BE5 /* HealthKitManager.swift */,
+			);
+			path = "HealthKit Manager";
+			sourceTree = "<group>";
+		};
 		8459E73E2460EC15002452F6 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +122,7 @@
 				8459E7602460EC17002452F6 /* MacrosTests */,
 				8459E76B2460EC17002452F6 /* MacrosUITests */,
 				8459E7482460EC15002452F6 /* Products */,
+				842DFA4524663F6400F27BE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,10 +139,12 @@
 		8459E7492460EC15002452F6 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
+				842DFA4424663F6300F27BE5 /* Macros.entitlements */,
 				8459E74A2460EC15002452F6 /* AppDelegate.swift */,
 				8459E74C2460EC15002452F6 /* SceneDelegate.swift */,
 				8459E74E2460EC15002452F6 /* DemoViewController.swift */,
 				842DFA3E2465030800F27BE5 /* TVDemoViewController.swift */,
+				842DFA4824663F8C00F27BE5 /* HealthKit Manager */,
 				84B358892464F436001FA5C3 /* Components */,
 				84B358902464FCEA001FA5C3 /* Food Database Manager */,
 				8459E77C2460FA92002452F6 /* Extensions.swift */,
@@ -157,9 +185,9 @@
 		84B358902464FCEA001FA5C3 /* Food Database Manager */ = {
 			isa = PBXGroup;
 			children = (
+				84B3588E2464FCDA001FA5C3 /* FoodDatabaseProtocol.swift */,
 				84B3588A2464FCA7001FA5C3 /* FoodDatabaseProperties.swift */,
 				84B3588C2464FCB9001FA5C3 /* FoodDatabaseManager.swift */,
-				84B3588E2464FCDA001FA5C3 /* FoodDatabaseProtocol.swift */,
 				84B358912464FD35001FA5C3 /* FoodDatabaseModels.swift */,
 			);
 			path = "Food Database Manager";
@@ -305,6 +333,8 @@
 				8459E74D2460EC15002452F6 /* SceneDelegate.swift in Sources */,
 				84B3588D2464FCB9001FA5C3 /* FoodDatabaseManager.swift in Sources */,
 				84B3588B2464FCA7001FA5C3 /* FoodDatabaseProperties.swift in Sources */,
+				842DFA4324663C1100F27BE5 /* HealthKitManager.swift in Sources */,
+				842DFA4124663B7B00F27BE5 /* HealthKitProtocol.swift in Sources */,
 				842DFA3F2465030800F27BE5 /* TVDemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Macros/Macros.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBHHC6VWZD;
 				INFOPLIST_FILE = Macros/Info.plist;
@@ -489,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Macros/Macros.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBHHC6VWZD;
 				INFOPLIST_FILE = Macros/Info.plist;

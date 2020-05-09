@@ -35,6 +35,10 @@ class GoalCollectionCell: UITableViewCell {
         return collectionView
     }()
 
+    func reloadItem(at indexPath: IndexPath) {
+        collectionView.reloadItems(at: [indexPath])
+    }
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(collectionView)

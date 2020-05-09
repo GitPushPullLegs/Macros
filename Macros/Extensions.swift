@@ -21,3 +21,20 @@ extension UIImage {
         return nil
     }
 }
+
+extension Date {
+    func at(hours: Int, minutes: Int, seconds: Int) -> Date {
+        let calendar = NSCalendar(calendarIdentifier: .gregorian)
+        var dateComponents = calendar!.components([
+            NSCalendar.Unit.year,
+            NSCalendar.Unit.month,
+            NSCalendar.Unit.day
+        ], from: self)
+
+        dateComponents.hour = hours
+        dateComponents.minute = minutes
+        dateComponents.second = seconds
+
+        return calendar!.date(from: dateComponents)!
+    }
+}

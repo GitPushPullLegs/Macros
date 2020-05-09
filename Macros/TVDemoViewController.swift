@@ -7,11 +7,28 @@
 //
 
 import UIKit
+import HealthKit
 
 class TVDemoViewController: UITableViewController {
 
+    let hkManager = HealthKitManager()
+    var caloriesConsumed: Int = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        let caloriesSample = HKQuantityType.quantityType(forIdentifier: .dietaryEnergyConsumed)!
+        let AM12 = Date().at(hours: 0, minutes: 0, seconds: 0)
+        hkManager.fetchNutrientDetails(of: caloriesSample, startDate: AM12, endDate: Date()) { (samples) in
+            var totalCals = 0
+            for each in samples! {
+                totalCals += Int((each as! HKQuantitySample).quantity.doubleValue(for: HKUnit.kilocalorie()))
+            }
+            self.caloriesConsumed = totalCals
+
+            DispatchQueue.main.async {
+                self.goalCell.reloadItem(at: IndexPath(row: 0, section: 0))
+            }
+        }
         setupTableView()
     }
 
@@ -52,8 +69,8 @@ extension TVDemoViewController: GoalCollectionCellDataSource, GoalCollectionCell
             let caloriesCell = GoalCell.dequeue(collectionView, for: indexPath)
             caloriesCell.tintColor = .systemRed
             caloriesCell.titleLabel.text = "Calories"
-            caloriesCell.subtitleLabel.text = "324 remaining"
-            caloriesCell.progressView.setProgress(0.56, animated: false)
+            caloriesCell.subtitleLabel.text = "\(2750 - caloriesConsumed) remaining"
+            caloriesCell.progressView.setProgress(Float(caloriesConsumed)/2750, animated: false)
             return caloriesCell
         case 1:
             let caloriesCell = GoalCell.dequeue(collectionView, for: indexPath)
@@ -87,6 +104,5 @@ extension TVDemoViewController: GoalCollectionCellDataSource, GoalCollectionCell
     }
     
     func didSelectItemAt(_ indexPath: IndexPath, in collectionView: UICollectionView) {
-        print((collectionView.cellForItem(at: indexPath) as! GoalCell).titleLabel.text!)
     }
 }
