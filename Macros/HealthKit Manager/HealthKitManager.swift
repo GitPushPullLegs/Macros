@@ -12,14 +12,15 @@ import HealthKit
 class HealthKitManager: HealthKitProtocol {
 
     var healthStore: HKHealthStore?
-    var isHealthDataAvailable = false
+    var isHealthKitAvailable = false
 
     init() {
         if HKHealthStore.isHealthDataAvailable() {
-            isHealthDataAvailable = true
+            isHealthKitAvailable = true
             self.healthStore = HKHealthStore()
         } else {
             //TODO: Handle HealthKit unavailable.
+            print("HealthKit unavailable.")
         }
     }
 
@@ -62,7 +63,7 @@ class HealthKitManager: HealthKitProtocol {
     }
 
     func fetchNutrientDetails(of sample: HKSampleType, startDate: Date, endDate: Date, completion: @escaping ([HKSample]?) -> Void) {
-        guard let healthStore = healthStore else { fatalError() }
+        guard let healthStore = healthStore else { completion(nil); return }
 
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [.strictStartDate, .strictEndDate])
 
@@ -74,5 +75,29 @@ class HealthKitManager: HealthKitProtocol {
         }
 
         healthStore.execute(query)
+    }
+
+    @discardableResult
+    func observe(sample: HKSampleType) -> HKObserverQuery {
+        guard let healthStore = healthStore else { fatalError() }
+
+        let query = HKObserverQuery(sampleType: sample, predicate: nil) { (query, completionHandler, error) in
+            if let error = error {
+                fatalError(error.localizedDescription)
+            }
+
+            // This doesn't tell me what's changed, just that there's been a change. Here I should react to the observation.
+
+        }
+
+        healthStore.execute(query)
+
+        return query
+    }
+
+    func stopObserving(_ query: HKObserverQuery) {
+        guard let healthStore = healthStore else { fatalError() }
+
+        healthStore.stop(query)
     }
 }

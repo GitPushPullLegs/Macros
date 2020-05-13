@@ -10,8 +10,11 @@ import Foundation
 import HealthKit
 
 protocol HealthKitProtocol {
-    var isHealthDataAvailable: Bool { get set }
+    var isHealthKitAvailable: Bool { get set }
     func requestAccess()
     func isAuthorized(toShare object: HKObjectType) -> HKAuthorizationStatus
     func fetchNutrientDetails(of sample: HKSampleType, startDate: Date, endDate: Date, completion: @escaping ([HKSample]?) -> Void)
+    @discardableResult
+    func observe(sample: HKSampleType) -> HKObserverQuery
+    func stopObserving(_ query: HKObserverQuery)
 }
