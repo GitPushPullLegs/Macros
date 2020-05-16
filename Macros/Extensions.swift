@@ -38,3 +38,11 @@ extension Date {
         return calendar!.date(from: dateComponents)!
     }
 }
+
+extension UIView {
+    func addSubviews(_ subviews: [UIView]) {
+        subviews.forEach { (subview) in
+            self.addSubview(subview)
+        }
+    }
+}

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,7 @@
 		84B3588F2464FCDA001FA5C3 /* FoodDatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3588E2464FCDA001FA5C3 /* FoodDatabaseProtocol.swift */; };
 		84B358922464FD35001FA5C3 /* FoodDatabaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B358912464FD35001FA5C3 /* FoodDatabaseModels.swift */; };
 		84E40C07246E072500F7DA9D /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E40C06246E072500F7DA9D /* CalendarViewController.swift */; };
+		84E55214246E0CA900DEB139 /* CalendarDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E55213246E0CA900DEB139 /* CalendarDateCell.swift */; };
 		9C730E2FB4BDF3B3A72F6160 /* Pods_MacrosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5103FBFBE793EE1168B3105 /* Pods_MacrosTests.framework */; };
 		D760E8A68A989B32A3C825D0 /* Pods_Macros_MacrosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E16B4B0F28DEF7AC93573C /* Pods_Macros_MacrosUITests.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		84B3588E2464FCDA001FA5C3 /* FoodDatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDatabaseProtocol.swift; sourceTree = "<group>"; };
 		84B358912464FD35001FA5C3 /* FoodDatabaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDatabaseModels.swift; sourceTree = "<group>"; };
 		84E40C06246E072500F7DA9D /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		84E55213246E0CA900DEB139 /* CalendarDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDateCell.swift; sourceTree = "<group>"; };
 		88E16B4B0F28DEF7AC93573C /* Pods_Macros_MacrosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Macros_MacrosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C906D0DF91B61A7339720DA /* Pods-MacrosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacrosTests.debug.xcconfig"; path = "Target Support Files/Pods-MacrosTests/Pods-MacrosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA2E11FF0F01406082F14D8D /* Pods-Macros-MacrosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Macros-MacrosUITests.release.xcconfig"; path = "Target Support Files/Pods-Macros-MacrosUITests/Pods-Macros-MacrosUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				8459E77A2460ECFA002452F6 /* GoalCell.swift */,
 				842DFA3C2465021D00F27BE5 /* GoalCollectionCell.swift */,
+				84E55213246E0CA900DEB139 /* CalendarDateCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -225,7 +228,6 @@
 				9C906D0DF91B61A7339720DA /* Pods-MacrosTests.debug.xcconfig */,
 				0B77857CCA83C2EB2FB21E31 /* Pods-MacrosTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -474,6 +476,7 @@
 				8459E74B2460EC15002452F6 /* AppDelegate.swift in Sources */,
 				84B3588F2464FCDA001FA5C3 /* FoodDatabaseProtocol.swift in Sources */,
 				842DFA3D2465021D00F27BE5 /* GoalCollectionCell.swift in Sources */,
+				84E55214246E0CA900DEB139 /* CalendarDateCell.swift in Sources */,
 				8459E74D2460EC15002452F6 /* SceneDelegate.swift in Sources */,
 				84B3588D2464FCB9001FA5C3 /* FoodDatabaseManager.swift in Sources */,
 				84B3588B2464FCA7001FA5C3 /* FoodDatabaseProperties.swift in Sources */,
